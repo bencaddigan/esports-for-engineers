@@ -1,0 +1,146 @@
+﻿SAT Scoring
+
+eSports for Engineers v. 4.0
+
+As with the other games, be sure to record your flights and copy the
+resulting .vhs files to the SAT/afterGamereport directory.  Press the
+"F" key to toggle the recording on and off.  Use the
+./getBriefingDebriefing.sh command to copy Briefing.txt and
+debrief.txt into the SAT directory.  Copy these files also into
+SAT/afterGameReport, along with any relevant screenshots from Tacview
+and notes.  If using one of the more advanced Benchmark Sims (BMS)
+versions of Falcon 4 (see below), you can also put screenshots from
+Weapon Delivery Planner (WDP) in the SAT/afterGamereport directory.
+
+You can complete the SAT tasks with Free Falcon or with a more
+advanced version of the Falcon 4 code, see below for details on how to
+install a more advanced version on Ubuntu 20.04 LTS.
+
+RANK
+
+Bronze:
+
+score is the sum of the following
+
+.1 point each for successfully accomplishing these tasks, with score
+capped at 0.5:
+
+a. ILS instrument landing
+
+b. guns-only dogfight win
+
+c. IR missile dogfight win
+
+d. radar missile dogfight win
+
+e. CCIP bombing
+
+f. CCRP bombing
+
+g. maverick
+
+h. HARM
+
+i. laser guided bombing
+
+j.use IFF (see pdf in SAT/DOC for instructions)
+
+k. instant action mission in the last week where you accomplish at
+least 7 of the 9 tasks above take off, fly a traffic pattern and land
+using only trim controls, (that is to say without using joystick
+inputs or otherwise moving the elevator, aileron or rudder)
+
+Silver:
+
+The realistic campaigns are:
+
+In Free Falcon: the three Israeli theater campaigns (Six Day War –
+1967, Yom Kippur – 1973, Shlom Hagalil – 1982) and operation allied
+force in the Balkans theater
+
+In addition the more advanced BMS versions of Falcon 4 provide these
+additional realistic campaigns: Kuwait, Vietnam and Somalia.  See
+SAT/AdvancedFalcon4.pdf for details.
+
+Score is based on your mission rating as shown in the logbook.
+
+score = rating on mission flown/5, averaged over the last 5 missions
+flown, with score capped at 0.75
+
+Gold:
+
+Where w is the number of campaigns won, out of any of the campaigns
+listed above (playing either side),
+
+score = w/2, if score>1 then score =1
+
+PROJECT SCORE
+
+3 points for learning how to take off, land and use the weapons
+systems in the flightgear f16.  To fly this aircraft run the script
+./training_F16.sh
+
+1 point for learning to take off, land and use the cockpit instruments
+of the MiG21.  To fly this aircraft, run the script:
+./training_MiG21.sh
+
+2 points for trying out and understanding all the FF6 keyboard
+commands in Falcon4KeyboardCommands.pdf
+
+2 points for skimming all documentation
+
+1 point for flying 5 different airplanes in successful campaign
+missions
+
+1 point for watching BMS 4.32 – Install to Combat Ready in 1 Hour on
+Youtube at URL https://www.youtube.com/watch?v=uU3pmXvnc0k To save
+time and protect hearing turn off sound and use close caption text at
+2x speed.  (Note that BMS 4.32 is a more advanced version of the FF6
+software – see below).
+
+1 point for becoming more familiar with FF6 keyboard commands by doing
+ramp start entirely using the Function key commands listed in
+INSTALL/US Page 1 FF5.pdf
+
+Non-free Alternatives
+
+Three more advanced versions of the Falcon 4 code are available on
+Ubuntu 20.04 LTS.  These Benchmark Sims (BMS) versions contains more
+mature versions of the same codebase as Free Falcon, run on linux, and
+are excellent alternatives to Free Falcon.  Note that BMS 4 has a
+dependency on the original Falcon 4 game, which must be purchased to
+run BMS 4. The original Falcon 4 is available from gog.com (buy the
+Falcon Collection).  For more information see SAT/UpgradingFalcon.pdf
+
+Download the free BMS 4 add-ons at these links (sha256sum checksums
+are provided for security):
+
+BMS 4.32: runs fast on old computers, Balkans and Kuwait historical
+campaigns, very stable
+
+cfe99d9c93176dfd19ad43552d8aac47efad594703dd45d3cd18adb56f7bb5d1
+BMS432.tar.gz
+https://www.mediafire.com/file/zoliz8bgpbcbtpl/BMS432.tar.gz/file
+
+BMS 4.33: more detailed simulation of aircraft systems, Balkans,
+Vietnam and Somalia historical campaigns
+
+e86a79baedf62db2c07e80b181ee012680bc658c921e98e06327f085b42c30c0
+BMS433.tar.gz
+https://www.mediafire.com/file/uiv9e3ng2wftyns/BMS433.tar.gz/file
+
+BMS 4.35: state-of-the-art combat flight sim, improved AI, more
+advanced graphics, slightly slower frame rates than the other two.
+Includes historical Balkans and Israel campaigns.  More realistic, and
+therefore more complex.  One of the best flight simulators currently
+available.
+
+078dc1e99b032818d17fc4a894e35866ec9ce5f51892b4832d2dba360f49c8fe
+BMS435.tar.gz
+https://www.mediafire.com/file/692xegajcfxjcmx/BMS435.tar.gz/file
+
+If you choose , you can perform one of the tasks above using one of
+the BMS versions listed above.  Download one, or download all three
+and decide which you like best.  Put downloaded BMS versions in the
+SAT directory.
+

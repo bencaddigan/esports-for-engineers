@@ -1,0 +1,32 @@
+# If security is a concern, follow these steps:
+
+1. Designate an old PC for use only with eSports for Engineers.  (A gaming PC is overkill for these old game - a 5 year old, min-range PC works fine.)
+
+2. Install Ubuntu 20.04 LTS on this PC.  (You could also create a new Ubuntu 20.04 LTS partition in a dual boot configuration, where you boot either Ubuntu or MS Windows, or Ubuntu or a different linux partition.) 
+
+3. follow the steps in introduction.txt (in the tar file and in the scripts directory on the github site), paying particular attention to the instructions about downloading and installing proprietary graphics drivers.  
+
+4. run 
+
+ubuntu_20_04_LTS_PackageInstall.sh
+
+(also in the githib site scripts directory, and in the tar file) to install the needed packages
+
+5. download flightgear and the add-on aircraft for flightgear as described in introduction.txt
+
+6. make sure you've installed the two different versions of wine needed, namely wine-development and, through
+an add-on winehq repository, winehq-staging.  (See introduction.txt)
+
+7. Copy esports-for-engineers-v40.tar.gz onto your Ubuntu partition.  Unpack and run launcher.py to play
+the games.
+
+Note: Once you've installed winehq-staging you can disconnect from the internet permanently, then install the games.  However,
+if you want online help for two of the games (MON/wBridge5 and THU/BattleOfBritain/battleOfBritain.sh), connect to the 
+internet when installing these two games.
+
+If you have trouble with winehq-staging, which is the newest version of wine and has had limited testing, use the wine-development
+version of wine instead.  wine-development runs all the games except THU/BattleOfBritain/battleOfBritain.sh.  In other words,
+if you don't want to play THU/BattleOfBritain/battleOfBritain.sh, you don't need to install winehq-staging.  Just download the other
+packages by cutting and pasting the commands printed out by ubuntu_20_04_LTS_PackageInstall.sh, disconnect from the internet permanently,
+and install the games.
+

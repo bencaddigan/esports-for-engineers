@@ -1,0 +1,20 @@
+mkdir iso
+sudo mount -o loop BATTLEOFBRITAIN.iso iso/
+mkdir WP
+export WINEPREFIX=$PWD/WP
+winecfg
+cd iso/
+ls
+wine Setup.exe 
+wineboot
+cd ..
+cd RR\ ROWANBOB\ GRAPHICS\ MOD/
+wine bob_v098.exe 
+wine bob_v099.exe 
+# copy graphics patch to BoB folder
+rsync -a bobMain/ "$WINEPREFIX/drive_c/Program Files (x86)/Rowan Software/Battle Of Britain/"
+cd ..
+ls
+cd "$WINEPREFIX/drive_c/Program Files (x86)/Rowan Software/Battle Of Britain"
+ls
+wine bob.exe

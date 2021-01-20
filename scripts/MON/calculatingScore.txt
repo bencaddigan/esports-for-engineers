@@ -1,0 +1,75 @@
+﻿MON Scoring eSports for Engineers v. 4.0
+
+Save your Bridge games as .pbn files to the MON/afterGameReport
+directory.  Copy these .pbn files, along with screenshot .png files
+showing your games and analysis to the MON/afterGameReport directory,
+calculate your score as described below, and then enter your score
+using launcher.py
+
+RANK (see “calculatingScore.txt” in the main directory)
+
+Bronze:
+
+Run ./wBridge4.sh Set level to 5.
+
+Play 4 hands of duplicate bridge.  (Don't select "Dup" to start play
+in the closed room until the Dummmy hand has been laid out ; this will
+cause the 4 AI players to start play using the same bid).
+
+Play these 4 hands in a single wBridge5 session; your total
+International Match Points (IMP) score for the 4 hands will be
+displayed at lower left.
+
+score=(IMP+18)/20*.5, if score>.5 then set score=.5, if score<0 then
+set score=0 If you viewed all the hidden cards during play, multiply
+score by 0.8 Independent of whether you viewed hidden cards, if you
+chose to be dealt strong cards in Options/Deals, multiply score by 0.8
+
+There is no penalty for displaying info (on lower right in
+./wBridge5sh).
+
+Silver:
+
+Play 4 hands of duplicate bridge, this time allowing for a different
+bid in the closed room by selecting “Dup” before the bidding phase.
+Now you are being scored on the bidding as well as the card play.
+Viewing hidden cards or specifying strong cards in Options/Deals is
+not permitted at the silver level.  Adjusting your partner’s bidding
+in Options/Bidding is allowed.  Determine score from net IMP as in the
+Bronze level, except with “.5” replaced by ".75" wherever it appears
+in the score formula, i.e. score=(IMP+18)/20*.75, if score>.75 then
+set score=.75, if score<0 then set score=0
+
+
+Gold:
+
+Duplicate bridge as in Silver, but using the three different bidding
+systems in the Options/Bidding menu, and with the scoring formula
+below.  Play four hands with the wBridge5 system, four with the Sef
+system and four with the Sayc system.  Score = average of IMP for all
+12 boards, if score>1 then set score=1, if score<0 then score=0.
+
+
+PROJECT SCORE
+
+1 point for reading Bayone, “A Taste of Bridge”, Master Point Press
+(2017) and all documentation in the MON directory
+
+2 points for writing a bcalc Lua script which generates randomized
+deals that are hard to bid with standard bidding conventions.
+Practice playing these deals using less common bidding conventions.
+
+3 point for calculating all the hands in “A Taste of Bridge” and
+listing all cases in with the author’s recommendation would have
+failed if the distribution of hidden cards was different than it
+turned out to be in his example
+
+Non-free Alternatives
+
+Q-plus bridge, a full-featured commercial software product that will
+run on linux under wine, can be substituted for wBridge5.  (wBridge5
+tied with Q-plus bridge in the 2019 computer bridge world
+championship.)
+
+
+

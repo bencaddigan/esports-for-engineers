@@ -1,0 +1,8 @@
+MON,TUE,WED,THU,FRI,SAT
+wBridge5.sh,gpl-demo.sh,nibbler.sh,BattleOfBritain/battleOfBritain.sh,KaTrain.sh,training_F16.sh
+bcalc.sh,randomizeDrivers.sh,scid.sh,BattleOfBritain/basicFlightTraining.sh,q5go.sh,training_MiG21.sh
+,replay.sh,banksiaGui.sh,BattleOfBritain/training_spitfire.sh,sabaki.sh,freeFalcon.sh
+,setup-manager.sh,,BattleOfBritain/training_me109.sh,goreviewpartner.sh,rampStartTrainer.sh
+,,,MigAlley/migAlley.sh,,replay.sh
+,,,MigAlley/training_F86.sh,,
+,,,MigAlley/training_MiG15.sh,,

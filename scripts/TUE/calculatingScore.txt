@@ -1,0 +1,113 @@
+﻿TUE Scoring eSports for Engineers v. 4.0
+
+Save your replay file after each race.  These files are stored in
+TUE/WP/drive_c/Sierra/GPL/replay.  Copy your .rpy files, along with
+setup files, screenshot .png files showing your games and analysis to
+the TUE/afterGameReport directory, calculate your score as described
+below, and then enter your score using launcher.py
+
+RANK
+
+Bronze:
+
+Run ./replay.sh. Choose File/Add replay lap. In the list look for
+replays with the prefix “fs_”.  These are benchmark replays made by
+the expert Grand Prix Legends driver Ferdinand Schulze.  Choose a
+track which has a fs_ Schulze replay available.  If you are new to sim
+racing, start with Watkins Glen, one of the shortest tracks.
+
+In the unlikely event that you’ve already practiced with all the
+dozens of car/track combinations for which there is a Schulze replay,
+go through them again in the same order.
+
+Now run ./gpl-demo.sh and make sure the 67 carset is chosen.  Select
+your chosen track.  (If this track is not part of the 67 season,
+select the Seasons button to add it.  In the season manager window,
+select your track on the left, the 67 season on the right, and then
+press the top middle button to add your track.  You’ll also want to
+load Schulze’s setup file for that track. (Note: for a more realistic
+driving experience, use the 67x carset instead of the 67 carset.  In
+this case you will not be able to use the Schulze' setup, but you will
+have several other setups from which to choose.)
+
+Total your own best times on this track, then compare to Ferdinand
+Schulze’s time on the same time.
+
+score={1-3*(your lap time - Schulze’s lap time in seconds)/Schulze’s
+lap time}*.5, if score>.5 then score=.5, if score<0 then score=0
+
+Silver:
+
+Run a full race, using a different carset each time you attempt the
+Silver task.  If you’ve used all the carsets, cycle through the
+carsets again.  Start with the original ‘67 carset, followed by the
+‘55 carset and‘66, then ‘67 Sports Cars, then ‘65, then ‘67x, then
+1966 Can Am driving the moveable wing Chap 2F, then ‘67 F2.  Also
+cycle through the tracks, not returning to the same track until you’ve
+visited all the tracks.  Start Goodwood ‘65, then Watkin’s Glen, then
+Spa67, brands67, targa, and Isle of Man.  Choose a race type such that
+the race length is approximately one hour.  Faux ABS (engaging both
+brake and throttle during turns to exploit the lack of brake fade
+modeling in all carsets except ‘55) is not allowed.  Use the default
+36 FPS frame rate, as the AI is weaker if the frame rate is 60 FPS.
+Select 8 computer opponents.  Before each race, randomize the list of
+computer drivers so you face different opponents in each race via:
+./randomizeDrivers.sh
+
+Where r is your rank at the finish of the race (1 for 1st place, 2 for
+2nd place etc.)  score={(15/14-r/14)*.75, if score > 0.75, then
+score=0.75, if score<0 then score=0
+
+Gold:
+
+Same as silver, but tune the brake balance, suspension, differential
+etc. yourself, starting from the default setup.  Create your own
+completely new setup rather than making small changes to an existing
+setup - change at least 6 setup parameters, each by at least 10% from
+any existing setup.  At Spa you will need a stiff setup with gearing
+optimized for top speed, at Brands Hatch you will want a softer setup
+with gearing tuned for best acceleration.  Select 10 computer
+opponents.  Before each race, randomize the list of computer drivers
+so you face different opponents in each race via:
+./randomizeDrivers.sh
+
+Where r is your rank at the finish of the race (1 for 1st place, 2 for
+2nd place etc.)  score={(11/10-r/10), if score>1 then score=1, if
+score<0 then score=0
+
+PROJECT SCORE
+
+2 points for reading Ian Korf’s book, “You Suck at Racing: A Crash
+Course for the Novice Driver”
+
+1 point for skimming all documentation in the TUE directory
+
+2 points for reading the documentation in the setupGuides directory,
+developing a new setup, and testing it on the two test tracks (the
+skidpad track and the complex track in the 67 season)
+
+2 points for finishing a 67SC sports car race with Pit Stop and
+Keypress selected in GEM with 15 cars or more participating, where you
+beat at least 5 cars with AI speed set to 2 in GEM.
+
+2 points for finishing in the top 25% of an iGor race with at least 10
+drivers participating.  To join such a race, select iGor from the GEM
+screen.  (you may need to join a GPL league to participate in the
+race)
+
+1 point for finishing 10 iGor races.  In GEM simply click on “iGor” to
+see available races.  If there are none available, start one of your
+own, selecting a car and track you haven’t used before, or haven’t
+used often.
+
+
+Non-free Alternative
+
+gpl-demo can be replaced with the commercial racing sim rFactor 1,
+along with add-on ‘67 car mod F1 Legends Racing and the add-on GPL era
+tracks such as FDsign Spa58 Rfactor and RC GoodwoodRevival 2016.  Of
+the many commercial racing sims, rFactor 1 is chosen because in can be
+purchased on DVD and run with no internet connection, and because of
+its good car physics and tire modeling.  Though designed for MS
+Windows, rFactor1 can be run on Ubuntu 20.04 linux/wine 5.0 linux
+using winetricks dxvk.

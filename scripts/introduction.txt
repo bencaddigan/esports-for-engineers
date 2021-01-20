@@ -1,0 +1,490 @@
+INTRODUCTION
+
+Welcome to eSports for Engineers version 4.0!
+
+This is an exciting time for realistic simulation games (hereafter
+“sims”) as more quality free sims become available on linux.  eSports
+for Engineers provides a challenging sim for each day of the week, all
+usable on a mid-range 5 year old linux PC.  These aren’t the usual
+multiplayer fantasy games, they’re sims, in that they realistically
+reproduce some kind of contest that existed in the real world before
+there were computers.  In playing any of these sims, you are
+recreating a historical event.  All games in this package run offline,
+without need for internet access.
+
+By providing linux installers, launchers and documentation for classic
+old sims, eSports for Engineers brings a new level of depth and
+quality to free, offline linux gaming.
+
+The realistic simulation games described here recreate a real-world
+experience, and are continually augmented by open source volunteer
+efforts.  That’s why these sims keep getting better as the years go
+by.  Flightgear, Grand Prix Legends, Mig Alley, Battle of Britain and
+Falcon 4.0 are all two decades old, far past the shelf life of most
+software.  Yet now, thanks to advances in linux and wine, these sims
+run better then ever.  If you're already setting aside time every day
+for a treadmill or exercise bike workout, you can play these
+challenging sims during that time for a combined mind-body workout.
+
+INSTALLATION STEPS
+
+1. Install Ubuntu 20.04 LTS linux. During the installation, on the
+"Updates and other software" screen, select "Install third-party
+software for graphics and Wi-Fi hardware and other media formats".
+(Installing third party software during Ubuntu 20.04 LTS install can
+lead to a warning that the install failed - ignore it.  If this
+happens, the first time you install packages via sudo apt install
+... you're likely to see a prompt to insert a cdrom.  If that happens,
+issue this command: "sudo sed -i 's/deb cdrom/#deb cdrom/g'
+/etc/apt/sources.list").
+
+Optional: instead of automatically installing 3rd party software, at a
+terminal prompt after install issue the commands "sudo ubuntu-drivers
+devices", followed by "sudo ubuntu-drivers autoinstall" and reboot
+
+Create a new Ubuntu 20.04 LTS partition, with size at least 100
+Gigabytes, as the base games package takes up at least 45.6 Gigabytes, fully
+installed. (Installed size depends somewhat on the version of wine
+you're using and what optional features you install).  Future versions
+of wine will probably take up somewhat more disk space.  Optional
+upgrades, which are not required to play esports for engineers, could
+increase disk space needed to as much as 200 Gigabytes.
+
+2. unpack the tar file: tar xzf esports-for-engineers-v40.tar.gz In
+the esports-for-engineers-v40 directory run the script
+
+./ubuntu_20_04_LTS_PackageInstall.sh
+
+This will print out the commands you'll need to install libraries and
+utilites needed by the games.  Copy and paste these commands one by
+one into a terminal window to run the commands.
+
+There are three parts to this - first, installing a large number of
+repository packages, second, installing the latest version of wine
+(winehq-staging), and third, installing flightgear and 5 add-on
+aircraft. Steps 1 and 3 take about 15 minutes each.
+
+Concerning wine - the simplest approach is to use winehq-staging for
+all the games.  This gives the sharpest graphics and, in some cases,
+provides online help that is not available with earlier versions of 
+wine.  On the other hand, winehq-staging is slower, takes more disk
+space, and is not as well tested as older versions of wine.  All the
+games except the THU flight simulators will run with wine-stable,
+so some may prefer using wine-stable except for the THU games.  The
+wine-development version is intermediate between the two, and will
+run every game except THU/battleOfBritain.sh.  Switching between
+wine versions is done with these commands:
+
+sudo apt install -y wine-stable
+
+sudo apt install -y wine-development
+
+sudo apt install --install-recommends winehq-staging
+
+3. double check that you are using the fastest graphics card drivers.
+If the command lsmod | grep nouveau returns any output, it means you
+are using the slow generic nouveau graphics driver.  With the nouveau
+driver frame rate will be lower in the 3D sims, if they work at all.
+Load the correct proprietary driver for your graphics card!
+
+WORKAROUNDS AND TIPS FOR EACH GAME
+
+Each of these sims has its own special magic, and, in most cases, it’s
+own idiosyncrasies when it comes to running on linux.  Great strides
+have been made recently in getting these old Microsoft Windows sim
+running smoothly on linux, but for each sim there are workarounds to
+remember and, often, configurations to set up prior to playing.
+
+Here’s what you need to know before you tackle the complexity of these
+sims.  For each day of the week, there is a score sheet setting
+milestones to help you learn and track your progress.  Each day you
+can elect to pursue a Bronze, Silver or Gold task (in increasing order
+of difficulty) and, if you choose, complete recommended projects as
+well.  Run ./launcher.py in the base directory to select games and
+enter your scores.  
+
+IMPORTANT NOTE: you must save your game result or you will not be allowed to enter a score.  For Bridge, Chess and Weiqi, choose save game and save the
+game in the afterGameReport directory.  If playing Chess, and if using SCID to annotate a game you'll need to copy to the clipboard and paste into a text editor, then save this text file with a .pgn suffix because SCID does not save .pgn files directly.  Nibbler can save .pgn files.
+
+For the TUE sim, after
+exiting the 3D view, find the playback controls below the picture.   Click on the folder icon that is second from right on the playback control bar to save a replay.  
+
+For the THU flight sims, set gun camera in preferences to "ON".  When exiting 3D view, select "Replay", type a new file name in the Current File box, and select "Save".  To turn off recording during uneventful parts of your flight, press "v" in Mig Alley or "c" in Battle of Britain.  Press the same key again again to start recording again into the same file.
+
+For the SAT sim, select "BRIEFING" and then "PRINT" to save the briefing in the afterGameReport directory.  When in the 3D view, type "F" to record the flight.  Type "F" to toggle the recording on and off.
+
+Choose export in launcher.py to create a tar file of your scores and supporting game files to share with others.  To unpack a tar file and access the files within it, type "tar xzf <name of tar file>".  To compare scores, send a link to your exported tar file, along with the verification code, to the eSports for Engineers forum on fostodon:
+
+https://fosstodon.org/@esports_for_engineers
+
+Now for a whirlwind tour of the sims, and of the workarounds you’ll
+need to play them.
+
+The easiest way to start playing the sims is to use the launcher; run
+the ./launcher.py script in the esports-for-engineers-v40 directory.
+There’s one (or more) sim for each day of the week, so let’s take it
+one day at a time:
+
+MON:
+
+Once wine is installed, simply select MON in ./launcher.py or execute
+the shell script in the MON directory as follows:
+
+./wBridge5.sh
+
+to run the free wBridge 5 Contract Bridge program, a worthy opponent
+that has won multiple computer Bride world championships.  The first
+time you run this or other wine games, you may be asked whether to
+install mono and gecko.  Install gecko but not mono.  (The one
+exception is the optional BMS flight sims, for which you want both
+mono and gecko.)
+
+Run
+
+./bcalc.sh
+
+from launcher.py or the command line to run Bridge analysis software.
+
+MON WORKAROUNDS: none, but if you install the additional linux
+packages per the instructions in the MON directory, bcalc will
+automatically switch to a native linux version with sharper graphics.
+(These packages are automatically installed by the
+ubuntu_20_04_LTS_PackageInstall.sh script).
+
+TUE:
+
+If the name “Grand Prix Legends” doesn’t ring a bell, read the article
+“Why I Loved Hardcore Racing sim Grand Prix Legends, the story of the
+racing sim that won’t die” at this link:
+
+https://www.pcgamer.com/why-i-loved-hardcore-racing-sim-grand-prix-legends/
+
+Statistical analysis has recently confirmed the claim made on Grand
+Prix Legends (GPL)’s release back in 1998 that the old open-wheel F1
+racecars in the sim were the hardest ever cars to drive:
+
+https://www.economist.com/graphic-detail/2020/10/17/engineers-not-racers-are-the-true-drivers-of-success-in-motor-sport
+
+After practicing with the dozens of different cars and tracks, delve
+deeper by reading about car setups in the DOC/setupGuides folder, then
+practice with different setups on the skidpad tracks.  Practise
+driving with low grip on the front wheels, make a few donuts by
+exceeding the traction budget on the rear wheels, experiment with
+pushing vs. loose, soft vs. stiff setups, etc. on the skidpad and
+complex test tracks (under 67 season).
+
+TUE WORKAROUNDS: GPL loses keyboard focus regularly; when this occurs,
+typing regular characters on the keyboard will have no effect.  To
+counter this, you need to get accustomed to grabbing the keyboard
+focus back again via:
+
+1. use <ALT> TAB and <ALT><SH> TAB to highlight the window in which
+GPL is running
+
+2. press <ALT> F6 to restore keyboard focus to the GPL window
+
+Also note: press F10 (after restoring keyboard focus, see above) to
+toggle between in-car view and chase view.  Stop the car and press
+<ESC> ENTER to exit the GPL 3D view.  On the skidpad track your car
+starts out embedded in a roadside barrier.  Free it by pressing <SH>
+R.  If that doesn’t work, exit the 3D view, re-enter and try <SH> R
+again.
+
+Note: GPL is the only sim in eSports for Engineers that seems to run
+without adjustments on every recent linux distro.  If using a distro
+other than Ubuntu, however, you may encounter a blurry text problem.
+Run the supplied script file “runThisIfGPLTextUnreadable.sh” to fix
+that.
+
+WED:
+
+WED brings us to the timeless game of chess, enhanced with the latest
+artificial intelligence.  There are two AI sparing partners;
+stockfish, running on the SCID chess platform, and, on the nibbler
+platform, Leela Chess Zero.  Leela Chess Zero is an open source clone
+of the world champion deep learning code Alpha Zero.
+
+Stockfish has superhuman strength and plays in an inscrutable way
+without ever making a blunder.  It’s no fun to play stockfish – use it
+to analyze your games after you’ve sparred with a human-strength
+version of Leela Chess Zero.  The deep learning “brain” of Leela Chess
+Zero is it’s network, a file of numbers which determines its strength.
+Start with the smallest network,
+INSTALL/otherWeights/tinygyal-8.pb.gz, which will occasionally drop
+pieces in a very human-like way.  To further reduce its strength, and
+increase it’s spontaneity, set Versus/Temperature to 1 and
+Versus/TempDecayMoves to Infinite in nibbler.
+
+For an entertaining game, open the INSTALL/25000grandmasterGames.si4
+grandmaster database in SCID, bring up Tree Window:
+25000grandmasterGames, and during the opening, every time it’s your
+turn in nibbler, roll a pair of dice, update the position in SCID and
+use the number on the dice to choose your move from the grandmaster
+moves listed in the SCID tree window.  That way you don’t have to
+memorize openings, and you get a very different game every time.  When
+you’ve run out of database moves it’s you against Leela Chess Zero.
+After the game, copy the game from nibbler via File/Write PGN to
+Clipboard and paste it into SCID via Edit/Copy Clipboard Text as PGN
+game.  Score your game by setting the SCID Tools/Analysis Engine to
+stockfish, setting the blunder threshold to 2 in SCID
+Analysis:stockfish annotate, and thus using stockfish to analyze your
+game.  Reviewing the game is a great way to learn, and is often
+surprising.  Your score for WED is inversely proportional to the
+number of blunders stockfish found in your play.
+
+WED WORKAROUNDS: you will need to navigate to the Alpha Chess Zero
+binary and tinygyal-8 (or other network file) from Nibbler.  Choose
+Versus/Play this Color in Nibbler when you want Alpha Zero to move.
+When Nibbler opens a dialog box it often puts it beneath the Nibbler
+chess board window on the screen, so look for an occluded dialog box
+with <ALT> TAB if Nibbler isn’t responding to your keyboard commands.
+If Nibbler displays a solid black window, you may be using the wrong
+version of wine.  Type
+
+wine –version
+
+to make sure you’re using wine version 5.5 or later with Nibbler
+
+THU:
+
+Now that Grand Prix Legends has taught you to pilot high-powered
+vehicles in two dimensions, it’s time to up your game by adding
+another dimension and a lot more backstory.  Install flightgear in
+Ubuntu via
+
+sudo apt install flightgear
+
+Unless you’re very familiar with flight simulators, it’s a good idea
+to start with takeoff and landing practice using the open source
+flightgear simulator and the venerable Cessna 172P aircraft.  Later
+you’ll be glad you learned how to manage the vertical velocity
+indicator and how to “step on the ball” to prevent a spin.  Download
+the other aircraft per the instructions, then progress from the Cessna
+to the spitfire and bf109 in the Battle of Britain directory, and then
+the F86 and MiG15 in the Mig Alley directory.  Learn the cockpit
+instruments in these planes and practice startup, takeoff and landing.
+
+The THU games are two classic flight and war simulators, Mig Alley and
+Battle of Britain.  These two sims run on the same game engine and
+share many commands and idiosyncrasies.  As with GPL, the historical
+setting of these sims was chosen for maximum challenge.  The fighter
+planes available during the Battle of Britain planes were underpowered
+and cumbersome – imagine competing in an auto race while constantly
+trying not to over-rev your engine in a car that has only two gears,
+and you’ll have some idea of the cockpit workload of Battle of Britain
+pilots.  These early planes used deer-rifle caliber ammunition, so the
+best you could realistically hope for was to shoot a hole in the
+radiator of your opponent and cripple him with a slow leak.  The
+dogfighting AI is impressive, and you play the roles of both pilot and
+general.
+
+Mig Alley is like GPL in that you’re dealing with overpowered machines
+which lack modern control systems.  It was the dawn of the jet age
+before missiles, a period when many experimental technologies were
+being put to the test for the first time.  The well-known Mig Alley
+campaign was one of the first unscripted campaigns, set within the
+historical context of the Korean war.  Each time you play Mig Alley
+campaign, you recreate the air war in Korean based on your decisions
+and performance.  Learn to zoom in on the 2D campaign map view and
+turn on icons, e.g. troops and tanks, to study the evolving
+battlefield situation before you start each mission.
+
+THU WORKAROUNDS: For both Mig Alley and Battle of Britain, a dual
+monitor setup is recommended.  Use the winehq-staging version of
+wine. Set both monitors to their maximum resolutions, and set PC
+Config/3D resolution and Campaign Resolution to 1280x1024 in Battle of
+Britain.  In ./setWineDisplayResolution.sh graphics tab only the
+"Allow The Window Manger To Control the Windows" should be selected.
+Following all these steps should prevent graphics problems.
+
+If you don't follow all these steps, here are some of the problems
+you'll run in to: both sims place a black box over the 3D view window
+in many situations - unless there is a second monitor, in which case
+the black box is harmlessly displayed on the second monitor.  (Note:
+since source code for both sims is available, this is probably easy to
+fix.  See the Issues tab on the project github page.)
+
+For Mig Alley, first check your wine configuration by running the
+script
+
+./setWineDisplayResolution.sh
+
+Select the Graphics tab in the Wine configuration dialog.  The tic box
+labeled "Allow The Window Manger To Control the Windows" should be
+checked, the other tic boxes unchecked.  If you run into graphics
+problems, you may want to try other settings in this tab - see the
+DEBUG folder under the Mig Alley directory if needed.  (Briefly, if
+you run into graphics glitches, try using a dual monitor setup.  If
+that doesn't work, select "Allow the window manager to decorate
+windows" and "Emulate virtual desktop" in the
+./setWineDisplayResolution.sh Graphics tab.  Set virtual desktop size
+to your max screen resoluion.
+
+Any time you encounter graphics glitches in 3D view, press <ALT> X to
+return to the 2D view.  The workarounds are the same for the other THU
+sim, Battle of Britain.)
+
+Next, check that you are using winehq-staging via
+
+wine --version
+
+Both THU sims run best with winehq-staging.  Mig Alley (but not Battle
+of Britain) will run with wine-5.5, which is wine-development as of
+this writing.
+
+
+Again, to avoid graphics glitches, use a dual monitor setup for the
+THU games.  Check that the monitors are set to max resolution via
+right click/Display Settings on an empty Ubuntu desktop, or by running
+the supplied script (try both methods - one or the other may not work
+correctly with your monitors).
+
+Note: If the Mig Alley display is occluded by a black screen in a dual
+monitor setup, that's probably because your monitors are not
+configured correctly; try using different monitors.  If unable to
+solve this problem, turn on virtual desktop using
+./setWineDisplayResolution.sh and set your monitors to maximum
+resolution, which you can do via: ./delayedMonitorReset.sh 0
+
+When in the 2D campaign view in either sim, close any extra dialog
+boxes before selecting a recon photo.  You may not be able to click on
+the recon photo camera movement controls.  If this happens, use number
+key commands instead:
+
+1. rotate recon photo clockwise, press 1 again to stop rotation
+
+2. rotate counter-clockwise
+
+3. zoom in
+
+4. zoom out
+
+5. reset zoom
+
+0. return to 2D campaign view
+
+Number keys work similarly on the replay screen.
+
+Note that the mouse is not used in Mig Alley 3D view - use num pad
+keys to change the view (or use a head tracking device - see
+THU/MigAlley/DOC for details.)
+
+This should not be a problem if you've followed all the recommended
+steps, but whenever you get a chance, set or reset the resolution in
+Mig Alley (via PREFERENCES) to 1024x768. Note that when using
+winehq-staging the actual Mig Alley screen resolution will be higher
+than 1024x768.
+
+
+Before running Battle of Britain, check that you have the correct
+version via
+
+wine --version
+
+As of January 2021 that version is wine-6.0 (Staging), but this will
+change as winehq.org releases newer versions.  If using an earlier
+version of wine issue the command:
+
+sudo apt install --install-recommends winehq-staging
+
+Run the shell script
+
+./setWineDisplayResolution.sh
+
+and open the Graphics tab to check that the tic mark configuration is
+the same as for Mig Alley (see above).  If you run into graphics
+glitches in 3D view you may want to try other settings here - see the
+information in the Battle of Britain DEBUG directory for other
+settings.
+
+Note: Useful keys when flying Mig Alley are <ALT> F6 to see a view
+from the padlocked aircraft, and num pad Enter to glance at your
+instrument panel.  In Battle of Britain, use <CTRL> i to see a view
+from the padlocked aircraft.  In a dogfight it can be useful to fly
+using this view along with the orientation aids in the upper right and
+left corners of the 3D view.
+
+FRI:
+
+FRI WORKAROUNDS: KaTrain expects to run on your graphics card (GPU),
+so install opencl per the instructions for this purpose.  The
+standalone katago binary does not use the GPU, but rather uses
+openblass on your CPU; again, refer to the detailed instructions to
+install all the needed libraries (running the
+ubuntu_20_04_LTS_PackageInstall.sh script does this for you).  Even if
+you can't configure katago, you can still play against gnugo, but
+without the benefit of annotation heatmaps. (Note that for chess,
+banksiaGui.sh in the WED directory provides a numerical heatmap
+overlay for Leela Chess Zero.)
+
+SAT:
+
+SAT introduces the most famous combat flight sim lineage of them all,
+Falcon 4.0.  The free and open source version, Free Falcon 6, is best
+approached after practicing with the flightgear f16.  Flightgear uses
+simplified commands and models perhaps 1/3 of the aircraft’s systems,
+so it’s a good place to start.  Practice landing and takeoffs with
+flightgear, and learn all the commands provided by this simpler take
+on the f16.  Also practice taking off and landing with the flightgear
+MiG 21, but don’t study the MiG 21 avionics as preparation for Free
+Falcon, because for simplicity all aircraft in the games derived from
+Falcon 4.0 use f16 avionics).
+
+Note that the first time you run Free Falcon, it unpacks and inflates
+a lot of files before starting.  The Tacview utility tracks all the
+activity that occurred during a mission or TE (tactical engagement for
+training.)  Free Falcon includes two historically accurate campaigns,
+one (Israeli Classic) featuring the decade of Arab-Israeli wars from
+roughly 1970 to 1980 and the other the 1990’s Balkan’s conflict.
+
+SAT WORKAROUNDS: Free Falcon crashes in the Israel Classic theater
+when you start a Yom Kippur or Invasion of Lebanon campaign.  As a
+workaround, several campaigns from these wars were started on MS
+Windows and then saved for use here.  You can choose from among saved
+campaigns (see CAMPAIGN/SAVED) where you fly for an Arab country or
+for Israel, and you also have a choice among different aircraft and
+roles.  Note that Free Falcon/Isreali Classic does not crash in the
+Yom Kippur campaign, so this is a good campaign to try first.
+
+Optional: there are three more recent versions of Falcon 4.0 available
+as a separate download for a small fee.  Like GPL, Falcon 4.0
+continues to improve two decades after its original release.  The
+modern versions of Falcon 4.0 are not free, as you must buy a copy of
+the original Falcon 4.0 game to unlock the installers, but this
+original game can be downloaded for a minimal price.  Links to three
+versions of the current Falcon 4.0 project, Benchmark Sims, are
+provided in SAT/DOC/AdvancedFalcon4.pdf.
+
+BMS 4.32 is (relatively) simple, but still a big step up in terms of
+graphics and realism from Free Falcon; it also includes a historical
+Kuwait campaign.  It uses 20 GB of disk space and runs on modest
+hardware.
+
+BMS 4.33 is more complex and realistic and comes with historical
+Vietnam and Somalia campaigns.  It takes 40 GB of disk space and has
+roughly 10% lower frame rate than BMS 4.32 on the same hardware.
+
+The best combat flight simulator or any type available today may well
+be BMS 4.35, which ratchets up the complexity, realism and overall
+quality still further.  It achieves this by using DX11 with the latest
+wine vulkan drivers.  It takes 40 GB of disk space and has lower
+frame rate than the others, but runs adequately on a 5 year old PC.
+
+One last tip: although the winehq-staging version of wine should run
+all the games, if you run into problems loading wine games you can
+switch to a more stable, tested version of wine via
+
+sudo apt install -y wine-development
+
+This older version of wine should run all the games reasonably well
+except THU/Battle of Britain and the optional flight sim BMS 4.35.
+
+installation is done, cd to the esports-for-engineers-v40 directory
+and type
+
+./launcher.py
+
+to play the games and track your weekly score.
+
+
+

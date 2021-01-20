@@ -1,0 +1,33 @@
+QUESTION: The tar file contains binaries that run under linux/wine, but I want to compile directly from source.  Where are the source files?
+
+ANSWER: The source code is here:
+
+https://github.com/gondur/mig_src
+
+https://github.com/gondur/BOB_Src
+
+https://github.com/FreeFalcon
+
+Understand that this is 20 year old legacy windows source code.  You'd need to set up a legacy windows programming environment in order to compile it, and even then, what you'd obtain is a legacy windows binary.  Porting the source code to linux would be very helpful for this project, but it would not be easy.
+
+QUESTION: If I can't compile from source, I want to download the original binaries that were collected into the tar file.  Where are the links to these original windows binaries?
+
+ANSWER: See the file "references.txt" in each DOC folder in the tar file.  These sims were patched and enhanced over a period of many years by community volunteers.  Getting them running involved hunting down patches and documentation in old internet forums, then figuring out how to get the resulting code running under ever-changing versions of wine by optimizing wine configuration setting. For the THU and SAT sims, the original binaries are included in the tar file.   Scripts supplied by this project automatically patch, configure and install the scripts.  If you want to examine these scripts, just clone this github repo. In cases where the original binaries are not included here, the DOC/references.txt describe where to find the binaries.
+
+QUESTION: So I need to download the tar file, but the tar file is on an external file server rather than github.  How can I trust that the file server didn't tamper with the tar file?
+
+ANSWER: Github doesn't host large binaries.  You don't need to trust the file server - after downloading the tar file to linux, run "sha256sum esports-for-engineers-v40.tar.gz".  Check that the output is is
+4b1172ade547dfd0a352d11bc9cae1501693e048c8c4996c2c6a9ee287d67826 esports-for-engineers-v40.tar.gz
+
+QUESTION: Binaries can contain malware.  How can I trust the binaries in the tar file?
+
+ANSWER: You don't need to trust the binaries. See secureInstallationInstructions.txt for instructions on setting up an isolated partition.  An internet connection is needed when installing Ubuntu libraries and 3rd party libraries by cutting and pasting the commands printed by the ubuntu_20_04_LTS_PackageInstall.sh script.  Otherwise, no internet connection is needed to install and run the games.
+
+QUESTION: Setting up a partition would take half an hour.  I want to play the games right now.
+
+ANSWER: These aren't arcade games, they're sims.  You would need to digest a hundred pages of documentation to become proficient at any one of these sims.  (The tar file contains extensive documentation on each sim).  With sims learning is part of the fun, but it does take time.  The game collection was originally put together to provide something interesting to do while riding on an exercise bike.  If you're short on time, take a look at the github pages for a couple of the strategy games that qualified to be included in the tar file:
+
+https://github.com/fohristiwhirl/nibbler
+
+https://github.com/sanderland/katrain
+
